@@ -89,7 +89,14 @@ X_test = np.resize(X_test,(X_test.shape[0],X_test.shape[1],1))
 predicted_stock_price = regressor.predict(X_test)
 predicted_stock_price = scaler.inverse_transform(predicted_stock_price)
 
- 
+#plotting the results
+plt.plot(real_set , color = 'red' , label = 'Real stock price for google')
+plt.plot(predicted_stock_price , color= 'blue' , label = 'Predicted stock price for google') 
+plt.title('Google stock price predictions')
+plt.xlabel('Time')
+plt.ylabel('Google Stock Price')
+plt.legend()
+plt.show()
 
 
 
